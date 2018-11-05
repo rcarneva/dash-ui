@@ -9,13 +9,13 @@ class Grid:
     def __init__(self, _id="default_grid_id",
                  children=None, num_rows=1, num_cols=1, grid_padding=1):
         if num_rows not in range(1, 13):
-            return ValueError(
+            raise ValueError(
                 "Only 1 to 12 rows supported, not {:d}".format(num_rows))
         if num_cols not in range(1, 13):
-            return ValueError(
+            raise ValueError(
                 "Only 1 to 12 columns supported, not {:d}".format(num_cols))
         if grid_padding not in VALID_GRID_PADDINGS:
-            return ValueError(
+            raise ValueError(
                 "Only grid paddings in "
                 + str(VALID_GRID_PADDINGS)
                 + "supported")
